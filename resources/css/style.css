@@ -37,6 +37,12 @@ body {
     overflow: hidden;
 }
 
+@media only screen and (max-width: 425px) {
+    .card {
+        cursor: none;
+    }
+}
+
 .card:hover {
     color: #fff;
     transform: translateY(-5px);
