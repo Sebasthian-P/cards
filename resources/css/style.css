@@ -14,7 +14,7 @@ body {
 
 .container__cards {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
