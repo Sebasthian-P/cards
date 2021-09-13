@@ -37,7 +37,7 @@ body {
     overflow: hidden;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 800px) {
     .card {
         cursor: none;
     }
@@ -52,11 +52,13 @@ body {
 .card i {
     font-size: 5em;
     margin-top: 15px;
-    transform: translateY(35px);
-    transition: all 300ms;
+    transform: translateY(40px);
+    transition: all .5s;
 }
 
 .card:hover i {
+    animation-name: animate;
+    animation-duration: .5s;
     font-size: 2.5rem;
     transform: translateY(0px);
 }
@@ -141,24 +143,49 @@ body {
     background-image: linear-gradient( 110.3deg,  rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7% );
 }
 
-.container__cards .card_more i {
+.container__cards .card_more .plus {
+    position: absolute;
     margin: 0;
-    font-size: 5em;
+    font-size: 8em;
     transform: translateY(0px);
     transition: all 300ms;
+    z-index: 100;
 }
 
-.container__cards .card_more:hover i {
+.container__cards .card_more:hover .plus {
     font-size: 20em;
     opacity: 0;
 }
 
-.container__cards .card_more p {
-    position: absolute;
+.container__cards .card_more .content_more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 300ms;
 }
 
-.container__cards .card_more:hover p {
-    font-size: 3.5em;
-    letter-spacing: 4px;
+.container__cards .card_more .content_more i {
+    font-size: 1px;
+    transform: translateY(0px);
+    padding: 0;
+    margin: 0;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container__cards .card_more:hover .content_more i {
+    font-size: 50px;
+}
+
+.container__cards .card_more .content_more :nth-child(2) {
+    margin: 0 25px;
 }
